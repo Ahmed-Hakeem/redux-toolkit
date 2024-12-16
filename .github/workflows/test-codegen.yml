@@ -54,6 +54,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Pack
         run: yarn pack
@@ -101,6 +103,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Install build artifact
         run: yarn add ./package.tgz
@@ -138,6 +142,8 @@ jobs:
 
       - name: Install deps
         run: yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Download artifact
         id: download-artifact

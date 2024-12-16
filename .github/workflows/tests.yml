@@ -45,6 +45,8 @@ jobs:
 
       - name: Install deps
         run: yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       # Read existing version, reuse that, add a Git short hash
       - name: Set build version to Git commit
@@ -95,6 +97,8 @@ jobs:
 
       - name: Install deps
         run: yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Download build artifact
         uses: actions/download-artifact@v4
@@ -158,6 +162,8 @@ jobs:
 
       - name: Install deps
         run: yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Install React ${{ matrix.react.version }} and React-DOM ${{ matrix.react.react-dom.version }}
         run: yarn up react@${{ matrix.react.version }} react-dom@${{ matrix.react.react-dom.version }} @types/react@${{ matrix.react.types }} @types/react-dom@${{ matrix.react.react-dom.types }}
@@ -223,6 +229,8 @@ jobs:
 
       - name: Install deps
         run: yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Remove existing RTK
         run: yarn remove @reduxjs/toolkit
@@ -277,6 +285,8 @@ jobs:
 
       - name: Install deps
         run: yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - uses: actions/download-artifact@v4
         with:
@@ -316,6 +326,8 @@ jobs:
 
       - name: Install deps
         run: yarn install
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - uses: actions/download-artifact@v4
         with:
