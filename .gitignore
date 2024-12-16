@@ -7,7 +7,7 @@ dist*/
 lib
 es
 
-.yalc
+#.yalc
 yalc.lock
 yalc.sig
 

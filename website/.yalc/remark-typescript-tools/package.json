@@ -1,0 +1,74 @@
+{
+  "name": "remark-typescript-tools",
+  "author": "Lenz Weber-Tronic",
+  "version": "2.0.0-alpha.0",
+  "license": "MIT",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phryneas/remark-typescript-tools.git"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsup --watch",
+    "build": "tsup",
+    "test": "yarn tsx --test test/linkDocblocks.test.ts",
+    "lint": "true"
+  },
+  "_husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "module": "dist/index.js",
+  "dependencies": {
+    "@microsoft/tsdoc": "^0.15.0",
+    "@types/estree": "^1.0.5",
+    "@types/unist": "^3.0.3",
+    "mdast-util-mdx-jsx": "^3.1.3",
+    "mdast-util-mdxjs-esm": "^2.0.1",
+    "prettier": "^3.3.3",
+    "tsx": "^4.19.0",
+    "unist-util-flatmap": "^1.0.0",
+    "unist-util-visit": "^5.0.0",
+    "vfile": "^6.0.3"
+  },
+  "packageManager": "yarn@4.4.1",
+  "peerDependencies": {
+    "typescript": "*"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "sideEffects": false,
+  "yalcSig": "2251029911290ee2ed6d54e100ab3c9d"
+}
